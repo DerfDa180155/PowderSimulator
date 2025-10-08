@@ -9,7 +9,8 @@ class PowderSimulator:
         self.generateEmpty()
 
     def reset(self):
-        pass
+        self.board = []
+        self.generateEmpty()
 
     def generateEmpty(self):
         self.board = []
