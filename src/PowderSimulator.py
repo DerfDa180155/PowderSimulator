@@ -17,7 +17,7 @@ class PowderSimulator:
         temp = []
 
         for x in range(self.sizeX):
-            temp.append([])
+            temp.append([0])
 
         for y in range(self.sizeY):
             self.board.append(temp)

@@ -1,5 +1,7 @@
 import pygame
 
+import PowderSimulator
+
 
 class main:
     def __init__(self):
@@ -17,6 +19,8 @@ class main:
 
         self.clock = pygame.time.Clock()
         self.running = True
+
+        self.pouderSimulator = PowderSimulator.PowderSimulator(10,10)
 
         self.run()
 
@@ -47,7 +51,7 @@ class main:
 
 
 
-
+            print(self.pouderSimulator.board)
 
 
 
