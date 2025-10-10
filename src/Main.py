@@ -50,13 +50,20 @@ class main:
             oldMousePressed = mousePressed
 
 
-
-            print(self.pouderSimulator.board)
+            self.drawBoard(100, 100, 100, 100)
 
 
 
             pygame.display.flip()
             self.clock.tick(60)
+
+    def drawBoard(self, x, y, width, height):
+        print(self.pouderSimulator.board)
+
+        for x in self.pouderSimulator.sizeX:
+            for y in self.pouderSimulator.sizeY:
+                pass
+
 
 
 if __name__ == "__main__":
