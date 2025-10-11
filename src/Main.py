@@ -57,12 +57,16 @@ class main:
             pygame.display.flip()
             self.clock.tick(60)
 
-    def drawBoard(self, x, y, width, height):
+    def drawBoard(self, startX, startY, width, height):
         print(self.pouderSimulator.board)
 
-        for x in self.pouderSimulator.sizeX:
-            for y in self.pouderSimulator.sizeY:
-                pass
+        color = (255, 255, 255)
+
+
+        for x in range(self.pouderSimulator.sizeX):
+            for y in range(self.pouderSimulator.sizeY):
+                pygame.draw.rect(self.screen, color, (startX + (width*x), startY + (height*y), width, height))
+
 
 
 
