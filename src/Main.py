@@ -50,22 +50,21 @@ class main:
             oldMousePressed = mousePressed
 
 
-            self.drawBoard(100, 100, 100, 100)
+            self.drawBoard(100, 100, 100, 100, 10)
 
 
 
             pygame.display.flip()
             self.clock.tick(60)
 
-    def drawBoard(self, startX, startY, width, height):
+    def drawBoard(self, startX, startY, width, height, gapSize):
         print(self.pouderSimulator.board)
 
         color = (255, 255, 255)
 
-
         for x in range(self.pouderSimulator.sizeX):
             for y in range(self.pouderSimulator.sizeY):
-                pygame.draw.rect(self.screen, color, (startX + ((width+5)*x), startY + ((height+5)*y), width-5, height-5))
+                pygame.draw.rect(self.screen, color, (startX + ((width+(gapSize/2))*x), startY + ((height+(gapSize/2))*y), width-(gapSize/2), height-(gapSize/2)))
 
 
 
