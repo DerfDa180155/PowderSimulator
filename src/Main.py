@@ -64,7 +64,7 @@ class main:
 
         for x in range(self.pouderSimulator.sizeX):
             for y in range(self.pouderSimulator.sizeY):
-                pygame.draw.rect(self.screen, color, (startX + ((width+(gapSize/2))*x), startY + ((height+(gapSize/2))*y), width-(gapSize/2), height-(gapSize/2)))
+                pygame.draw.rect(self.screen, color, (startX + (width*x) + (gapSize/2), startY + (height*y) + (gapSize/2), width-(gapSize/2), height-(gapSize/2)))
 
 
 
