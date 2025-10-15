@@ -50,7 +50,13 @@ class main:
             oldMousePressed = mousePressed
 
 
-            self.drawBoard(100, 100, 100, 100, 10)
+            boardStartX = 100
+            boardStartY = 100
+            boardWidth = 130
+            boardHeight = 130
+            boardGapSize = 10
+
+            self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
 
 
 
@@ -58,8 +64,6 @@ class main:
             self.clock.tick(60)
 
     def drawBoard(self, startX, startY, width, height, gapSize):
-        print(self.pouderSimulator.board)
-
         color = (255, 255, 255)
 
         for x in range(self.pouderSimulator.sizeX):
