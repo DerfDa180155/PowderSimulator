@@ -57,7 +57,7 @@ class main:
             boardGapSize = 10
 
             self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
-
+            self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
 
 
             pygame.display.flip()
@@ -70,6 +70,9 @@ class main:
             for y in range(self.pouderSimulator.sizeY):
                 pygame.draw.rect(self.screen, color, (startX + (width*x) + (gapSize/2), startY + (height*y) + (gapSize/2), width-(gapSize/2), height-(gapSize/2)))
 
+    def boardClicked(self, mx, my, startX, startY, width, height, gapSize):
+        endX = startX + width
+        endY = startY + height
 
 
 
