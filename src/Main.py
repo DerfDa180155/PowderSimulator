@@ -71,8 +71,11 @@ class main:
                 pygame.draw.rect(self.screen, color, (startX + (width*x) + (gapSize/2), startY + (height*y) + (gapSize/2), width-(gapSize/2), height-(gapSize/2)))
 
     def boardClicked(self, mx, my, startX, startY, width, height, gapSize):
-        endX = startX + width
-        endY = startY + height
+        endX = startX + (width * self.pouderSimulator.sizeX)
+        endY = startY + (height * self.pouderSimulator.sizeY)
+
+        if startX <= mx and mx <= endX and startY <= my and my <= endY:
+            print("Test")
 
 
 
