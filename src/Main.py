@@ -57,8 +57,8 @@ class main:
             boardGapSize = 10
 
             self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
-            self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
-
+            x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
+            print(str(x) + " " + str(y))
 
             pygame.display.flip()
             self.clock.tick(60)
@@ -74,9 +74,17 @@ class main:
         endX = startX + (width * self.pouderSimulator.sizeX)
         endY = startY + (height * self.pouderSimulator.sizeY)
 
-        if startX <= mx and mx <= endX and startY <= my and my <= endY:
-            print("Test")
+        x = 0
+        y = 0
 
+        if startX <= mx and mx <= endX and startY <= my and my <= endY:
+            while mx > startX + width * x:
+                x += 1
+
+            while my > startY + height * y:
+                y += 1
+
+        return x, y
 
 
 if __name__ == "__main__":
