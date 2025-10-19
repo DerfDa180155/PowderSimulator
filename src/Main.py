@@ -59,6 +59,9 @@ class main:
             self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
             x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
             print(str(x) + " " + str(y))
+            if mousePressedUp[0] and x > 0 and y > 0:
+                self.pouderSimulator.placeElement(x, y, "1")
+
 
             pygame.display.flip()
             self.clock.tick(60)

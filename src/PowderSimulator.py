@@ -12,6 +12,9 @@ class PowderSimulator:
         self.board = []
         self.generateEmpty()
 
+    def placeElement(self, x, y, type):
+        self.board[y-1][x-1] = type
+
     def generateEmpty(self):
         self.board = []
         temp = []
