@@ -71,6 +71,10 @@ class main:
 
         for x in range(self.pouderSimulator.sizeX):
             for y in range(self.pouderSimulator.sizeY):
+                if self.pouderSimulator.board[x][x] == "1":
+                    color = (0, 0, 0)
+                else:
+                    color = (255, 255, 255)
                 pygame.draw.rect(self.screen, color, (startX + (width*x) + (gapSize/2), startY + (height*y) + (gapSize/2), width-(gapSize/2), height-(gapSize/2)))
 
     def boardClicked(self, mx, my, startX, startY, width, height, gapSize):
