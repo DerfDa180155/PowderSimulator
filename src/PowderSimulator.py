@@ -19,10 +19,11 @@ class PowderSimulator:
         self.board = []
         temp = []
 
-        for x in range(self.sizeX):
-            temp.append([0])
-
         for y in range(self.sizeY):
+            temp = []
+            for x in range(self.sizeX):
+                temp.append([0])
+
             self.board.append(temp)
 
     def generateNext(self):

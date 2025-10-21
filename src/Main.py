@@ -71,7 +71,7 @@ class main:
 
         for x in range(self.pouderSimulator.sizeX):
             for y in range(self.pouderSimulator.sizeY):
-                if self.pouderSimulator.board[x][x] == "1":
+                if self.pouderSimulator.board[y][x] == "1":
                     color = (0, 0, 0)
                 else:
                     color = (255, 255, 255)
