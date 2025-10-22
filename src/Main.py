@@ -59,8 +59,10 @@ class main:
             self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
             x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
             print(str(x) + " " + str(y))
-            if mousePressedUp[0] and x > 0 and y > 0:
+            if mousePressedUp[0] and x > 0 and y > 0: # left click
                 self.pouderSimulator.placeElement(x, y, "1")
+            elif mousePressedUp[2] and x > 0 and y > 0: # right click
+                self.pouderSimulator.placeElement(x, y, "0")
 
 
             pygame.display.flip()
