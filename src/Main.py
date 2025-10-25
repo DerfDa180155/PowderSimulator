@@ -20,7 +20,7 @@ class main:
         self.clock = pygame.time.Clock()
         self.running = True
 
-        self.pouderSimulator = PowderSimulator.PowderSimulator(100,100)
+        self.pouderSimulator = PowderSimulator.PowderSimulator(20,20)
 
         self.run()
 
@@ -57,7 +57,7 @@ class main:
             boardGapSize = 10
 
             self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
-            x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
+            x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight)
             print(str(x) + " " + str(y))
             if mousePressedUp[0] and x > 0 and y > 0: # left click
                 self.pouderSimulator.placeElement(x, y, "1")
@@ -79,7 +79,7 @@ class main:
                     color = (255, 255, 255)
                 pygame.draw.rect(self.screen, color, (startX + ((width/self.pouderSimulator.sizeX)*x) + (gapSize/2), startY + ((height/self.pouderSimulator.sizeY)*y) + (gapSize/2), (width/self.pouderSimulator.sizeX)-(gapSize/2), (height/self.pouderSimulator.sizeY)-(gapSize/2)))
 
-    def boardClicked(self, mx, my, startX, startY, width, height, gapSize):
+    def boardClicked(self, mx, my, startX, startY, width, height):
         endX = startX + width
         endY = startY + height
 
