@@ -10,12 +10,25 @@ class Button:
         self.color = color
         self.onClick = onClick
 
+        self.isHovered = False
+        self.isleftClicked = False
+        self.isrightClicked = False
+
     def draw(self, windowWidth, windowHeight):
-        pass
+        pygame.draw.rect(self.screen, self.color, (self.x, self.y, self.width, self.height))
 
     def clicked(self, mx, my, mouseClick):
-        pass
+        if self.hover(mx, my) and mouseClick[0]:
+            self.isleftClicked = True
+        elif self.hover(mx, my) and mouseClick[2]:
+            self.isrightClicked = True
+        else:
+            self.isleftClicked = False
+            self.isrightClicked = False
+        return self.isleftClicked, self.isrightClicked
 
     def hover(self, mx, my):
-        pass
+        temp = pygame.Rect(self.x, self.y, self.width, self.height)
+        self.isHovered = temp.collidepoint((mx, my))
+        return self.isHovered
 
