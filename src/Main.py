@@ -1,6 +1,7 @@
 import pygame
 
 import PowderSimulator
+import Button
 
 
 class main:
@@ -21,6 +22,9 @@ class main:
         self.running = True
 
         self.pouderSimulator = PowderSimulator.PowderSimulator(20,20)
+
+        self.buttons = []
+        self.buttons.append(Button.Button(self.screen, 100, 100, 100, 100, (255,255,0), "test"))
 
         self.run()
 
@@ -63,6 +67,10 @@ class main:
                 self.pouderSimulator.placeElement(x, y, "1")
             elif mousePressedUp[2] and x > 0 and y > 0: # right click
                 self.pouderSimulator.placeElement(x, y, "0")
+
+
+            for button in self.buttons:
+                button.draw(self.windowWidth, self.windowHeight)
 
 
             pygame.display.flip()
