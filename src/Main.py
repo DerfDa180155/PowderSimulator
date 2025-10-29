@@ -24,7 +24,9 @@ class main:
         self.pouderSimulator = PowderSimulator.PowderSimulator(20,20)
 
         self.buttons = []
-        self.buttons.append(Button.Button(self.screen, 100, 100, 100, 100, (255,255,0), "test"))
+        self.buttons.append(Button.Button(self.screen, 100, 1430, 50, 50, (255,255,0), "start simulation"))
+        self.buttons.append(Button.Button(self.screen, 200, 1430, 50, 50, (255,255,0), "stop simulation"))
+        self.buttons.append(Button.Button(self.screen, 300, 1430, 50, 50, (255,255,0), "speed"))
 
         self.run()
 
