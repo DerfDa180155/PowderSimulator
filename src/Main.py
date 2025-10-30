@@ -64,7 +64,8 @@ class main:
 
             self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
             x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight)
-            print(str(x) + " " + str(y))
+            #print(str(x) + " " + str(y))
+
             if mousePressedUp[0] and x > 0 and y > 0: # left click
                 self.pouderSimulator.placeElement(x, y, "1")
             elif mousePressedUp[2] and x > 0 and y > 0: # right click
@@ -72,7 +73,12 @@ class main:
 
 
             for button in self.buttons:
+                button.hover(mx, my)
+                button.clicked(mx, my, mousePressedUp)
                 button.draw(self.windowWidth, self.windowHeight)
+
+                if button.isleftClicked:
+                    print(button.onClick)
 
 
             pygame.display.flip()
