@@ -15,7 +15,11 @@ class Button:
         self.isrightClicked = False
 
     def draw(self, windowWidth, windowHeight):
-        pygame.draw.rect(self.screen, self.color, (self.x, self.y, self.width, self.height))
+        if self.isHovered:
+            newColor = (self.color[0]/2 ,self.color[1]/2, self.color[2]/2)
+            pygame.draw.rect(self.screen, newColor, (self.x, self.y, self.width, self.height))
+        else:
+            pygame.draw.rect(self.screen, self.color, (self.x, self.y, self.width, self.height))
 
     def clicked(self, mx, my, mouseClick):
         if self.hover(mx, my) and mouseClick[0]:
