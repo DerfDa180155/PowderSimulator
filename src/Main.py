@@ -80,6 +80,11 @@ class main:
 
                 if button.isleftClicked:
                     print(button.onClick)
+                    match button.onClick:
+                        case "start simulation":
+                            self.pouderSimulator.running = True
+                        case "stop simulation":
+                            self.pouderSimulator.running = False
 
 
             pygame.display.flip()

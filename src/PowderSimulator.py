@@ -6,6 +6,9 @@ class PowderSimulator:
         self.sizeY = sizeY
         self.board = []
 
+        self.running = False
+        self.speed = 1
+
         self.generateEmpty()
 
     def reset(self):
