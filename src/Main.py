@@ -50,9 +50,11 @@ class main:
             mousePressed = pygame.mouse.get_pressed()
             mousePressedUp = []
             mousePressedDown = []
+            mouseHolding = []
             for i in range(len(mousePressed)):
                 mousePressedUp.append(not mousePressed[i] and oldMousePressed[i])
                 mousePressedDown.append(mousePressed[i] and not oldMousePressed[i])
+                mouseHolding.append(mousePressed[i])
 
             oldMousePressed = mousePressed
 
@@ -67,9 +69,9 @@ class main:
             x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight)
             #print(str(x) + " " + str(y))
 
-            if mousePressedUp[0] and x > 0 and y > 0: # left click
+            if mouseHolding[0] and x > 0 and y > 0: # left click
                 self.pouderSimulator.placeElement(x, y, "1")
-            elif mousePressedUp[2] and x > 0 and y > 0: # right click
+            elif mouseHolding[2] and x > 0 and y > 0: # right click
                 self.pouderSimulator.placeElement(x, y, "0")
 
 
