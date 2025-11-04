@@ -87,6 +87,10 @@ class main:
                             self.pouderSimulator.running = True
                         case "stop simulation":
                             self.pouderSimulator.running = False
+                        case "speed":
+                            pass
+                        case "clear":
+                            self.pouderSimulator.reset()
 
 
             pygame.display.flip()
