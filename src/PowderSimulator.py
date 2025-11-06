@@ -30,4 +30,9 @@ class PowderSimulator:
             self.board.append(temp)
 
     def generateNext(self):
-        pass
+        for y in self.board:
+            for x in self.board[y]:
+                pass
+                #self.board[y][x]
+
+            
