@@ -31,6 +31,9 @@ class main:
         self.buttons.append(Button.Button(self.screen, 500, 1430, 50, 50, (255,255,0), "new board"))
         self.buttons.append(Button.Button(self.screen, 600, 1430, 50, 50, (255,255,0), "new x"))
         self.buttons.append(Button.Button(self.screen, 700, 1430, 50, 50, (255,255,0), "new y"))
+        self.buttons.append(Button.Button(self.screen, 800, 1430, 50, 50, (0,255,0), "select1"))
+        self.buttons.append(Button.Button(self.screen, 900, 1430, 50, 50, (0,255,0), "select2"))
+        self.buttons.append(Button.Button(self.screen, 1000, 1430, 50, 50, (0,255,0), "select3"))
 
         self.run()
 
