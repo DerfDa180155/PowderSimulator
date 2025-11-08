@@ -76,9 +76,9 @@ class main:
             #print(str(x) + " " + str(y))
 
             if mouseHolding[0] and x > 0 and y > 0: # left click
-                self.pouderSimulator.placeElement(x, y, "1")
+                self.pouderSimulator.placeElement(x, y)
             elif mouseHolding[2] and x > 0 and y > 0: # right click
-                self.pouderSimulator.placeElement(x, y, "0")
+                self.pouderSimulator.placeElement(x, y)
 
 
             for button in self.buttons:
@@ -97,6 +97,12 @@ class main:
                             pass
                         case "clear":
                             self.pouderSimulator.reset()
+                        case "select1":
+                            self.pouderSimulator.currentElement = "1"
+                        case "select2":
+                            self.pouderSimulator.currentElement = "2"
+                        case "select3":
+                            self.pouderSimulator.currentElement = "3"
 
 
             pygame.display.flip()

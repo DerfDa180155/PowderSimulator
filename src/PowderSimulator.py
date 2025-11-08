@@ -9,14 +9,16 @@ class PowderSimulator:
         self.running = False
         self.speed = 1
 
+        self.currentElement = "0"
+
         self.generateEmpty()
 
     def reset(self):
         self.board = []
         self.generateEmpty()
 
-    def placeElement(self, x, y, type):
-        self.board[y-1][x-1] = type
+    def placeElement(self, x, y):
+        self.board[y-1][x-1] = self.currentElement
 
     def generateEmpty(self):
         self.board = []
