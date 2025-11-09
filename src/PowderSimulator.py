@@ -20,6 +20,9 @@ class PowderSimulator:
     def placeElement(self, x, y):
         self.board[y-1][x-1] = self.currentElement
 
+    def removeElement(self, x, y):
+        self.board[y-1][x-1] = "0"
+
     def generateEmpty(self):
         self.board = []
         temp = []
