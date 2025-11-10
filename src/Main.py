@@ -115,6 +115,8 @@ class main:
             for y in range(self.pouderSimulator.sizeY):
                 if self.pouderSimulator.board[y][x] == "1":
                     color = (0, 0, 0)
+                elif self.pouderSimulator.board[y][x] == "2":
+                    color = (50, 50, 50)
                 else:
                     color = (255, 255, 255)
                 pygame.draw.rect(self.screen, color, (startX + ((width/self.pouderSimulator.sizeX)*x) + (gapSize/2), startY + ((height/self.pouderSimulator.sizeY)*y) + (gapSize/2), (width/self.pouderSimulator.sizeX)-(gapSize/2), (height/self.pouderSimulator.sizeY)-(gapSize/2)))
