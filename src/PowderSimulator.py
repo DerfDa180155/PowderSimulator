@@ -4,18 +4,15 @@ class PowderSimulator:
     def __init__(self, sizeX, sizeY):
         self.sizeX = sizeX
         self.sizeY = sizeY
-        self.board = []
+        self.board = self.generateEmpty()
 
         self.running = False
         self.speed = 1
 
         self.currentElement = "0"
 
-        self.generateEmpty()
-
     def reset(self):
-        self.board = []
-        self.generateEmpty()
+        self.board = self.generateEmpty()
 
     def placeElement(self, x, y):
         self.board[y-1][x-1] = self.currentElement
@@ -24,7 +21,7 @@ class PowderSimulator:
         self.board[y-1][x-1] = "0"
 
     def generateEmpty(self):
-        self.board = []
+        board = []
         temp = []
 
         for y in range(self.sizeY):
@@ -32,11 +29,13 @@ class PowderSimulator:
             for x in range(self.sizeX):
                 temp.append([0])
 
-            self.board.append(temp)
+            board.append(temp)
+        return board
 
     def generateNext(self):
-        for y in self.board:
-            for x in self.board[y]:
+        newBoard = self.generateEmpty()
+        for y in range(len(self.board)):
+            for x in range(len(self.board[y])):
                 pass
                 #self.board[y][x]
 
