@@ -26,14 +26,15 @@ class main:
         self.buttons = []
         self.buttons.append(Button.Button(self.screen, 100, 1430, 50, 50, (255,255,0), "start simulation"))
         self.buttons.append(Button.Button(self.screen, 200, 1430, 50, 50, (255,255,0), "stop simulation"))
-        self.buttons.append(Button.Button(self.screen, 300, 1430, 50, 50, (255,255,0), "speed"))
-        self.buttons.append(Button.Button(self.screen, 400, 1430, 50, 50, (255,255,0), "clear"))
-        self.buttons.append(Button.Button(self.screen, 500, 1430, 50, 50, (255,255,0), "new board"))
-        self.buttons.append(Button.Button(self.screen, 600, 1430, 50, 50, (255,255,0), "new x"))
-        self.buttons.append(Button.Button(self.screen, 700, 1430, 50, 50, (255,255,0), "new y"))
-        self.buttons.append(Button.Button(self.screen, 800, 1430, 50, 50, (0,255,0), "select1"))
-        self.buttons.append(Button.Button(self.screen, 900, 1430, 50, 50, (0,255,0), "select2"))
-        self.buttons.append(Button.Button(self.screen, 1000, 1430, 50, 50, (0,255,0), "select3"))
+        self.buttons.append(Button.Button(self.screen, 300, 1430, 50, 50, (255,255,0), "step one"))
+        self.buttons.append(Button.Button(self.screen, 400, 1430, 50, 50, (255,255,0), "speed"))
+        self.buttons.append(Button.Button(self.screen, 500, 1430, 50, 50, (255,255,0), "clear"))
+        self.buttons.append(Button.Button(self.screen, 600, 1430, 50, 50, (255,255,0), "new board"))
+        self.buttons.append(Button.Button(self.screen, 700, 1430, 50, 50, (255,255,0), "new x"))
+        self.buttons.append(Button.Button(self.screen, 800, 1430, 50, 50, (255,255,0), "new y"))
+        self.buttons.append(Button.Button(self.screen, 900, 1430, 50, 50, (0,255,0), "select1"))
+        self.buttons.append(Button.Button(self.screen, 1000, 1430, 50, 50, (0,255,0), "select2"))
+        self.buttons.append(Button.Button(self.screen, 1100, 1430, 50, 50, (0,255,0), "select3"))
 
         self.run()
 
