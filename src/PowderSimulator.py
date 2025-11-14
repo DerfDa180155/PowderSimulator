@@ -1,4 +1,4 @@
-
+import Sand
 
 class PowderSimulator:
     def __init__(self, sizeX, sizeY):
@@ -9,7 +9,7 @@ class PowderSimulator:
         self.running = False
         self.speed = 1
 
-        self.currentElement = "0"
+        self.currentElement = Sand.Sand()
 
     def reset(self):
         self.board = self.generateEmpty()
@@ -18,7 +18,7 @@ class PowderSimulator:
         self.board[y-1][x-1] = self.currentElement
 
     def removeElement(self, x, y):
-        self.board[y-1][x-1] = "0"
+        self.board[y-1][x-1] = 0
 
     def generateEmpty(self):
         board = []
@@ -27,7 +27,7 @@ class PowderSimulator:
         for y in range(self.sizeY):
             temp = []
             for x in range(self.sizeX):
-                temp.append([0])
+                temp.append(0)
 
             board.append(temp)
         return board

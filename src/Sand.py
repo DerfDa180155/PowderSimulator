@@ -8,6 +8,9 @@ class Sand:
 
         self.color = self.colorArray[random.randint(0, len(self.colorArray)-1)]
 
+    def createNewObject(self):
+        pass
 
-    def next(self):
+
+    def next(self, board, x, y):
         pass
