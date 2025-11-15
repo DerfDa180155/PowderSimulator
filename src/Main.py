@@ -2,6 +2,7 @@ import pygame
 
 import PowderSimulator
 import Button
+import Sand
 
 
 class main:
@@ -99,12 +100,12 @@ class main:
                         case "clear":
                             self.pouderSimulator.reset()
                         case "select1":
-                            self.pouderSimulator.currentElement = "1"
+                            self.pouderSimulator.currentElement = Sand.Sand()
                         case "select2":
                             self.pouderSimulator.currentElement = "2"
                         case "select3":
                             self.pouderSimulator.currentElement = "3"
-
+            print(self.pouderSimulator.board)
 
             pygame.display.flip()
             self.clock.tick(60)
@@ -115,8 +116,9 @@ class main:
         for x in range(self.pouderSimulator.sizeX):
             for y in range(self.pouderSimulator.sizeY):
                 if self.pouderSimulator.board[y][x] != 0:
-                    print(self.pouderSimulator.board[y][x])
                     color = self.pouderSimulator.board[y][x].color
+                else:
+                    color = color = (255, 255, 255)
                 pygame.draw.rect(self.screen, color, (startX + ((width/self.pouderSimulator.sizeX)*x) + (gapSize/2), startY + ((height/self.pouderSimulator.sizeY)*y) + (gapSize/2), (width/self.pouderSimulator.sizeX)-(gapSize/2), (height/self.pouderSimulator.sizeY)-(gapSize/2)))
 
     def boardClicked(self, mx, my, startX, startY, width, height):

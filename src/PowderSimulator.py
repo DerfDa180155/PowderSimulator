@@ -15,7 +15,7 @@ class PowderSimulator:
         self.board = self.generateEmpty()
 
     def placeElement(self, x, y):
-        self.board[y-1][x-1] = self.currentElement
+        self.board[y-1][x-1] = self.currentElement.createNewObject()
 
     def removeElement(self, x, y):
         self.board[y-1][x-1] = 0
