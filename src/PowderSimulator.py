@@ -9,14 +9,15 @@ class PowderSimulator:
         self.running = False
         self.speed = 1
 
-        self.currentElement = Sand.Sand()
+        self.currentElement = "Sand"
 
     def reset(self):
         self.board = self.generateEmpty()
 
     def placeElement(self, x, y):
-        if self.board[y-1][x-y].__class__ is not self.currentElement.__class__:
-            self.board[y-1][x-1] = self.currentElement.createNewObject()
+        match self.currentElement:
+            case "Sand":
+                self.board[y-1][x-1] = Sand.Sand()
 
     def removeElement(self, x, y):
         self.board[y-1][x-1] = 0

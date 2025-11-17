@@ -100,7 +100,7 @@ class main:
                         case "clear":
                             self.pouderSimulator.reset()
                         case "select1":
-                            self.pouderSimulator.currentElement = Sand.Sand()
+                            self.pouderSimulator.currentElement = "Sand"
                         case "select2":
                             self.pouderSimulator.currentElement = "2"
                         case "select3":
