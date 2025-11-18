@@ -9,4 +9,10 @@ class Sand:
         self.color = self.colorArray[random.randint(0, len(self.colorArray)-1)]
 
     def next(self, board, x, y):
-        pass
+        if y > len(board) or y < 0 or x > len(board[y]) or x < 0:
+            return
+
+        if board[y-1][x] == 0:
+            temp = board[y-1][x]
+            board[y-1][x] = board[y][x]
+            board[y][x] = temp
