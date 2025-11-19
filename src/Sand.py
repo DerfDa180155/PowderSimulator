@@ -12,7 +12,8 @@ class Sand:
         if y > len(board) or y < 0 or x > len(board[y]) or x < 0:
             return
 
-        if board[y-1][x] == 0:
-            temp = board[y-1][x]
-            board[y-1][x] = board[y][x]
-            board[y][x] = temp
+        if y < len(board) -1:
+            if board[y-1][x] == 0:
+                temp = board[y-1][x]
+                board[y-1][x] = board[y][x]
+                board[y][x] = temp
