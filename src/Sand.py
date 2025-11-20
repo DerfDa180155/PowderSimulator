@@ -17,3 +17,11 @@ class Sand:
                 temp = board[y-1][x]
                 board[y-1][x] = board[y][x]
                 board[y][x] = temp
+            elif board[y-1][x-1] == 0:
+                temp = board[y-1][x-1]
+                board[y-1][x-1] = board[y][x]
+                board[y][x] = temp
+            elif board[y-1][x+1] == 0:
+                temp = board[y-1][x+1]
+                board[y-1][x+1] = board[y][x]
+                board[y][x] = temp
