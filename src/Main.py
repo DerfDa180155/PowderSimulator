@@ -95,6 +95,8 @@ class main:
                             self.pouderSimulator.running = True
                         case "stop simulation":
                             self.pouderSimulator.running = False
+                        case "step one":
+                            self.pouderSimulator.generateNext()
                         case "speed":
                             pass
                         case "clear":

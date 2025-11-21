@@ -35,10 +35,10 @@ class PowderSimulator:
         return board
 
     def generateNext(self):
-        newBoard = self.generateEmpty()
+        #newBoard = self.generateEmpty()
         for y in range(len(self.board)):
             for x in range(len(self.board[y])):
-                pass
-                #self.board[y][x]
+                if self.board[y][x] != 0:
+                    self.board[y][x].next(self.board, x, y)
 
             
