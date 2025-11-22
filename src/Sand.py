@@ -8,20 +8,21 @@ class Sand:
 
         self.color = self.colorArray[random.randint(0, len(self.colorArray)-1)]
 
-    def next(self, board, x, y):
+    def next(self, board, newBoard, x, y):
         if y > len(board) or y < 0 or x > len(board[y]) or x < 0:
             return
 
         if y < len(board)-1:
             if board[y+1][x] == 0:
-                temp = board[y-1][x]
-                board[y+1][x] = board[y][x]
-                board[y][x] = temp
+                newBoard[y+1][x] = board[y][x]
+                newBoard[y][x] = board[y-1][x]
             elif board[y+1][x-1] == 0:
-                temp = board[y+1][x-1]
-                board[y+1][x-1] = board[y][x]
-                board[y][x] = temp
+                newBoard[y+1][x-1] = board[y][x]
+                newBoard[y][x] = board[y+1][x-1]
             elif board[y+1][x+1] == 0:
-                temp = board[y+1][x+1]
-                board[y+1][x+1] = board[y][x]
-                board[y][x] = temp
+                newBoard[y+1][x+1] = board[y][x]
+                newBoard[y][x] = board[y+1][x+1]
+            else:
+                newBoard[y][x] = board[y][x]
+        else:
+            newBoard[y][x] = board[y][x]
