@@ -83,6 +83,12 @@ class main:
                 self.pouderSimulator.removeElement(x, y)
 
 
+            # auto generate
+            if self.pouderSimulator.running:
+                self.pouderSimulator.generateNext()
+
+
+
             for button in self.buttons:
                 button.hover(mx, my)
                 button.clicked(mx, my, mousePressedUp)
