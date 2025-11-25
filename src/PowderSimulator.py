@@ -7,7 +7,8 @@ class PowderSimulator:
         self.board = self.generateEmpty()
 
         self.running = False
-        self.speed = 1
+        self.speed = 10
+        self.speedCounter = 0
 
         self.currentElement = "Sand"
 

@@ -85,7 +85,10 @@ class main:
 
             # auto generate
             if self.pouderSimulator.running:
-                self.pouderSimulator.generateNext()
+                if (self.pouderSimulator.speed == self.pouderSimulator.speedCounter):
+                    self.pouderSimulator.generateNext()
+                    self.pouderSimulator.speedCounter = 0
+                self.pouderSimulator.speedCounter += 1
 
 
 
