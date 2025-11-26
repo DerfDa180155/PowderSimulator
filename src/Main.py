@@ -1,3 +1,5 @@
+import time
+
 import pygame
 
 import PowderSimulator
@@ -107,7 +109,11 @@ class main:
                         case "step one":
                             self.pouderSimulator.generateNext()
                         case "speed":
-                            pass
+                            if self.pouderSimulator.speed == 1:
+                                self.pouderSimulator.speed = 10
+                            else:
+                                self.pouderSimulator.speed = 1
+                            self.pouderSimulator.speedCounter = 0
                         case "clear":
                             self.pouderSimulator.reset()
                         case "select1":
