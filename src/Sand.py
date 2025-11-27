@@ -15,13 +15,10 @@ class Sand:
         if y < len(board)-1:
             if board[y+1][x] == 0 and newBoard[y+1][x] == 0:
                 newBoard[y+1][x] = board[y][x]
-                newBoard[y][x] = board[y-1][x]
             elif board[y+1][x-1] == 0 and newBoard[y+1][x-1] == 0:
                 newBoard[y+1][x-1] = board[y][x]
-                newBoard[y][x] = board[y+1][x-1]
             elif board[y+1][x+1] == 0 and newBoard[y+1][x+1] == 0:
                 newBoard[y+1][x+1] = board[y][x]
-                newBoard[y][x] = board[y+1][x+1]
             else:
                 newBoard[y][x] = board[y][x]
         else:
