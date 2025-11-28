@@ -17,8 +17,11 @@ class Sand:
                 newBoard[y+1][x] = board[y][x]
             elif board[y+1][x-1] == 0 and newBoard[y+1][x-1] == 0:
                 newBoard[y+1][x-1] = board[y][x]
-            elif board[y+1][x+1] == 0 and newBoard[y+1][x+1] == 0:
-                newBoard[y+1][x+1] = board[y][x]
+            elif x+1 < len(board[y]):
+                if board[y+1][x+1] == 0 and newBoard[y+1][x+1] == 0:
+                    newBoard[y+1][x+1] = board[y][x]
+                else:
+                    newBoard[y][x] = board[y][x]
             else:
                 newBoard[y][x] = board[y][x]
         else:
