@@ -122,7 +122,7 @@ class main:
                             self.pouderSimulator.currentElement = "2"
                         case "select3":
                             self.pouderSimulator.currentElement = "3"
-            print(self.pouderSimulator.board)
+            #print(self.pouderSimulator.board)
 
             pygame.display.flip()
             self.clock.tick(60)

@@ -12,10 +12,12 @@ class Sand:
         if y > len(board) or y < 0 or x > len(board[y]) or x < 0:
             return
 
+        print(x)
+
         if y < len(board)-1:
             if board[y+1][x] == 0 and newBoard[y+1][x] == 0:
                 newBoard[y+1][x] = board[y][x]
-            elif board[y+1][x-1] == 0 and newBoard[y+1][x-1] == 0:
+            elif board[y+1][x-1] == 0 and newBoard[y+1][x-1] == 0 and x-1 >= 0:
                 newBoard[y+1][x-1] = board[y][x]
             elif x+1 < len(board[y]):
                 if board[y+1][x+1] == 0 and newBoard[y+1][x+1] == 0:
