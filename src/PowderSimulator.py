@@ -16,6 +16,8 @@ class PowderSimulator:
         self.board = self.generateEmpty()
 
     def placeElement(self, x, y):
+        if self.board[y-1][x-1] != 0:
+            return
         match self.currentElement:
             case "Sand":
                 self.board[y-1][x-1] = Sand.Sand()
