@@ -12,8 +12,6 @@ class Sand:
         if y > len(board) or y < 0 or x > len(board[y]) or x < 0:
             return
 
-        print(x)
-
         if y < len(board)-1:
             if board[y+1][x] == 0 and newBoard[y+1][x] == 0:
                 newBoard[y+1][x] = board[y][x]
@@ -28,3 +26,6 @@ class Sand:
                 newBoard[y][x] = board[y][x]
         else:
             newBoard[y][x] = board[y][x]
+
+        board[y][x] = 0
+
