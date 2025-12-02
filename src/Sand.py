@@ -8,6 +8,8 @@ class Sand:
 
         self.color = self.colorArray[random.randint(0, len(self.colorArray)-1)]
 
+        self.weight = 2
+
     def next(self, board, newBoard, x, y):
         if y > len(board) or y < 0 or x > len(board[y]) or x < 0:
             return
