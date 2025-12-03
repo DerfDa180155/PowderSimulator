@@ -119,7 +119,7 @@ class main:
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
                         case "select2":
-                            self.pouderSimulator.currentElement = "2"
+                            self.pouderSimulator.currentElement = "Water"
                         case "select3":
                             self.pouderSimulator.currentElement = "3"
             #print(self.pouderSimulator.board)

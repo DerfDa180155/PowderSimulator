@@ -1,4 +1,5 @@
 import Sand
+import Water
 
 class PowderSimulator:
     def __init__(self, sizeX, sizeY):
@@ -21,6 +22,8 @@ class PowderSimulator:
         match self.currentElement:
             case "Sand":
                 self.board[y-1][x-1] = Sand.Sand()
+            case "Water":
+                self.board[y - 1][x - 1] = Water.Water()
 
     def removeElement(self, x, y):
         self.board[y-1][x-1] = 0
