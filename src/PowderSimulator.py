@@ -23,7 +23,7 @@ class PowderSimulator:
             case "Sand":
                 self.board[y-1][x-1] = Sand.Sand()
             case "Water":
-                self.board[y - 1][x - 1] = Water.Water()
+                self.board[y-1][x-1] = Water.Water()
 
     def removeElement(self, x, y):
         self.board[y-1][x-1] = 0

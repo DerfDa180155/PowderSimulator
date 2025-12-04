@@ -17,6 +17,10 @@ class Sand:
         if y < len(board)-1:
             if board[y+1][x] == 0 and newBoard[y+1][x] == 0:
                 newBoard[y+1][x] = board[y][x]
+            elif board[y+1][x].weight < self.weight and newBoard[y+1][x].weight < self.weight:
+                temp = newBoard[y+1][x]
+                newBoard[y+1][x] = board[y][x]
+                board[y][x] = temp
             elif board[y+1][x-1] == 0 and newBoard[y+1][x-1] == 0 and x-1 >= 0:
                 newBoard[y+1][x-1] = board[y][x]
             elif x+1 < len(board[y]):
