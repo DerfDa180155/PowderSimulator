@@ -1,3 +1,4 @@
+import Empty
 import Sand
 import Water
 
@@ -17,7 +18,7 @@ class PowderSimulator:
         self.board = self.generateEmpty()
 
     def placeElement(self, x, y):
-        if self.board[y-1][x-1] != 0:
+        if self.board[y-1][x-1].__class__ != Empty.Empty:
             return
         match self.currentElement:
             case "Sand":
@@ -26,7 +27,7 @@ class PowderSimulator:
                 self.board[y-1][x-1] = Water.Water()
 
     def removeElement(self, x, y):
-        self.board[y-1][x-1] = 0
+        self.board[y-1][x-1] = Empty.Empty
 
     def generateEmpty(self):
         board = []
@@ -35,7 +36,7 @@ class PowderSimulator:
         for y in range(self.sizeY):
             temp = []
             for x in range(self.sizeX):
-                temp.append(0)
+                temp.append(Empty.Empty())
 
             board.append(temp)
         return board
@@ -44,7 +45,7 @@ class PowderSimulator:
         newBoard = self.generateEmpty()
         for y in range(len(self.board)-1,-1,-1):
             for x in range(len(self.board[y])-1,-1,-1):
-                if self.board[y][x] != 0:
+                if self.board[y][x].__class__ != Empty.Empty:
                     self.board[y][x].next(self.board, newBoard, x, y)
 
         self.board = newBoard
