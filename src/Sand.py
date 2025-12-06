@@ -1,6 +1,6 @@
 import random
-
 import pygame
+import Empty
 
 class Sand:
     def __init__(self):
@@ -33,5 +33,5 @@ class Sand:
         else:
             newBoard[y][x] = board[y][x]
 
-        board[y][x] = 0
+        board[y][x] = Empty.Empty()
 

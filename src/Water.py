@@ -1,6 +1,6 @@
 import random
-
 import pygame
+import Empty
 
 class Water:
     def __init__(self):
@@ -42,5 +42,5 @@ class Water:
         if not moved:
             newBoard[y][x] = board[y][x]
 
-        board[y][x] = 0
+        board[y][x] = Empty.Empty()
 
