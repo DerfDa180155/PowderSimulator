@@ -15,16 +15,16 @@ class Sand:
             return
 
         if y < len(board)-1:
-            if board[y+1][x] == 0 and newBoard[y+1][x] == 0:
+            if board[y+1][x] == Empty.Empty() and newBoard[y+1][x] == Empty.Empty():
                 newBoard[y+1][x] = board[y][x]
             elif board[y+1][x].weight < self.weight and newBoard[y+1][x].weight < self.weight:
                 temp = newBoard[y+1][x]
                 newBoard[y+1][x] = board[y][x]
                 board[y][x] = temp
-            elif board[y+1][x-1] == 0 and newBoard[y+1][x-1] == 0 and x-1 >= 0:
+            elif board[y+1][x-1] == Empty.Empty() and newBoard[y+1][x-1] == Empty.Empty() and x-1 >= 0:
                 newBoard[y+1][x-1] = board[y][x]
             elif x+1 < len(board[y]):
-                if board[y+1][x+1] == 0 and newBoard[y+1][x+1] == 0:
+                if board[y+1][x+1] == Empty.Empty() and newBoard[y+1][x+1] ==Empty.Empty():
                     newBoard[y+1][x+1] = board[y][x]
                 else:
                     newBoard[y][x] = board[y][x]
