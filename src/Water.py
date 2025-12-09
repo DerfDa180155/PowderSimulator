@@ -17,25 +17,25 @@ class Water:
         moved = False
 
         if y+1 < len(board):
-            if board[y+1][x] == 0 and newBoard[y+1][x] == 0:
+            if board[y+1][x].__class__ == Empty.Empty and newBoard[y+1][x].__class__ == Empty.Empty:
                 newBoard[y+1][x] = board[y][x]
                 moved = True
 
-            if board[y+1][x-1] == 0 and newBoard[y+1][x-1] == 0 and x-1 >= 0 and not moved:
+            if board[y+1][x-1].__class__ == Empty.Empty and newBoard[y+1][x-1].__class__ == Empty.Empty and x-1 >= 0 and not moved:
                 newBoard[y+1][x-1] = board[y][x]
                 moved = True
 
             if x + 1 < len(board[y]) and not moved:
-                if board[y+1][x+1] == 0 and newBoard[y+1][x+1] == 0:
+                if board[y+1][x+1].__class__ == Empty.Empty and newBoard[y+1][x+1].__class__ == Empty.Empty:
                     newBoard[y+1][x+1] = board[y][x]
                     moved = True
 
-        if board[y][x-1] == 0 and newBoard[y][x-1] == 0 and x-1 > 0 and not moved:
+        if board[y][x-1].__class__ == Empty.Empty and newBoard[y][x-1].__class__ == Empty.Empty and x-1 > 0 and not moved:
             newBoard[y][x-1] = board[y][x]
             moved = True
 
         if x + 1 < len(board[y]) and not moved:
-            if board[y][x+1] == 0 and newBoard[y][x+1] == 0:
+            if board[y][x+1].__class__ == Empty.Empty and newBoard[y][x+1].__class__ == Empty.Empty:
                 newBoard[y][x+1] = board[y][x]
                 moved = True
 
