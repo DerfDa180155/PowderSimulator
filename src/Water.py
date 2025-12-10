@@ -4,7 +4,7 @@ import Empty
 
 class Water:
     def __init__(self):
-        self.colorArray = [(0,0,255)]
+        self.colorArray = [(30,144,255), (24,116,205), (65,105,255), (28,134,238), (0,178,238)]
 
         self.color = self.colorArray[random.randint(0, len(self.colorArray)-1)]
 
