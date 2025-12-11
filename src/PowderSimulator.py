@@ -27,7 +27,7 @@ class PowderSimulator:
                 self.board[y-1][x-1] = Water.Water()
 
     def removeElement(self, x, y):
-        self.board[y-1][x-1] = Empty.Empty
+        self.board[y-1][x-1] = Empty.Empty()
 
     def generateEmpty(self):
         board = []
