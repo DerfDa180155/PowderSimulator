@@ -21,11 +21,21 @@ class Sand:
                 temp = newBoard[y+1][x]
                 newBoard[y+1][x] = board[y][x]
                 newBoard[y][x] = temp
+
             elif board[y+1][x-1].__class__ == Empty.Empty and newBoard[y+1][x-1].__class__ == Empty.Empty and x-1 >= 0:
                 newBoard[y+1][x-1] = board[y][x]
+            elif board[y+1][x-1].weight < self.weight and newBoard[y+1][x-1].weight < self.weight:
+                temp = newBoard[y+1][x-1]
+                newBoard[y+1][x-1] = board[y][x]
+                newBoard[y][x] = temp
+
             elif x+1 < len(board[y]):
                 if board[y+1][x+1].__class__ == Empty.Empty and newBoard[y+1][x+1].__class__ == Empty.Empty:
                     newBoard[y+1][x+1] = board[y][x]
+                elif board[y+1][x+1].weight < self.weight and newBoard[y+1][x+1].weight < self.weight:
+                    temp = newBoard[y+1][x+1]
+                    newBoard[y+1][x+1] = board[y][x]
+                    newBoard[y][x] = temp
                 else:
                     newBoard[y][x] = board[y][x]
             else:
