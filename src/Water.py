@@ -16,7 +16,7 @@ class Water:
 
         moved = False
 
-        if y+1 < len(board):
+        if y < len(board)-1:
             if board[y+1][x].__class__ == Empty.Empty and newBoard[y+1][x].__class__ == Empty.Empty:
                 newBoard[y+1][x] = board[y][x]
                 moved = True
@@ -25,7 +25,7 @@ class Water:
                 newBoard[y+1][x-1] = board[y][x]
                 moved = True
 
-            if x + 1 < len(board[y]) and not moved:
+            if x+1 < len(board[y]) and not moved:
                 if board[y+1][x+1].__class__ == Empty.Empty and newBoard[y+1][x+1].__class__ == Empty.Empty:
                     newBoard[y+1][x+1] = board[y][x]
                     moved = True
