@@ -121,7 +121,7 @@ class main:
                         case "select2":
                             self.pouderSimulator.currentElement = "Water"
                         case "select3":
-                            self.pouderSimulator.currentElement = "3"
+                            self.pouderSimulator.currentElement = "Metal"
             #print(self.pouderSimulator.board)
 
             pygame.display.flip()

@@ -1,6 +1,7 @@
 import Empty
 import Sand
 import Water
+import Metal
 
 class PowderSimulator:
     def __init__(self, sizeX, sizeY):
@@ -25,6 +26,8 @@ class PowderSimulator:
                 self.board[y-1][x-1] = Sand.Sand()
             case "Water":
                 self.board[y-1][x-1] = Water.Water()
+            case "Metal":
+                self.board[y-1][x-1] = Metal.Metal()
 
     def removeElement(self, x, y):
         self.board[y-1][x-1] = Empty.Empty()
