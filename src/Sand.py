@@ -31,7 +31,7 @@ class Sand:
                 newBoard[y+1][x-1] = board[y][x]
                 moved = True
 
-            if board[y+1][x-1].weight < self.weight and newBoard[y+1][x-1].weight < self.weight and not moved:
+            if board[y+1][x-1].weight < self.weight and newBoard[y+1][x-1].weight < self.weight and x-1 >= 0 and not moved:
                 temp = newBoard[y+1][x-1]
                 newBoard[y+1][x-1] = board[y][x]
                 newBoard[y][x] = temp
