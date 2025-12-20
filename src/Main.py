@@ -118,10 +118,13 @@ class main:
                             self.pouderSimulator.reset()
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
+                            button.isSelected = True
                         case "select2":
                             self.pouderSimulator.currentElement = "Water"
+                            button.isSelected = True
                         case "select3":
                             self.pouderSimulator.currentElement = "Metal"
+                            button.isSelected = True
             #print(self.pouderSimulator.board)
 
             pygame.display.flip()

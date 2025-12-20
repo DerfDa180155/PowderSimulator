@@ -10,6 +10,8 @@ class Button:
         self.color = color
         self.onClick = onClick
 
+        self.isSelected = False
+
         self.isHovered = False
         self.isleftClicked = False
         self.isrightClicked = False
