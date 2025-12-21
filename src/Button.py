@@ -20,6 +20,9 @@ class Button:
         if self.isHovered:
             newColor = (self.color[0]/2 ,self.color[1]/2, self.color[2]/2)
             pygame.draw.rect(self.screen, newColor, (self.x, self.y, self.width, self.height))
+        if self.isSelected:
+            pygame.draw.rect(self.screen, (0,255,128), (self.x-5, self.y-5, self.width+10, self.height+10))
+            pygame.draw.rect(self.screen, self.color, (self.x, self.y, self.width, self.height))
         else:
             pygame.draw.rect(self.screen, self.color, (self.x, self.y, self.width, self.height))
 
