@@ -122,12 +122,18 @@ class main:
                             self.pouderSimulator.reset()
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
+                            for tempButton in self.buttons:
+                                tempButton.isSelected = False
                             button.isSelected = True
                         case "select2":
                             self.pouderSimulator.currentElement = "Water"
+                            for tempButton in self.buttons:
+                                tempButton.isSelected = False
                             button.isSelected = True
                         case "select3":
                             self.pouderSimulator.currentElement = "Metal"
+                            for tempButton in self.buttons:
+                                tempButton.isSelected = False
                             button.isSelected = True
             #print(self.pouderSimulator.board)
 
