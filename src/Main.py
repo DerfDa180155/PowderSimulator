@@ -120,6 +120,8 @@ class main:
                             self.pouderSimulator.speedCounter = 0
                         case "clear":
                             self.pouderSimulator.reset()
+                        case "new board":
+                            self.pouderSimulator.reset()
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
                             for tempButton in self.buttons:
