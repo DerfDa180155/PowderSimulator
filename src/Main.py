@@ -43,6 +43,9 @@ class main:
             if button.onClick == "select1":
                 button.isSelected = True
 
+        self.newX = 0
+        self.newY = 0
+
         self.run()
 
     def run(self):
@@ -123,9 +126,9 @@ class main:
                         case "new board":
                             self.pouderSimulator.reset()
                         case "new x":
-                            pass
+                            self.pouderSimulator.sizeX = self.newX
                         case "new y":
-                            pass
+                            self.pouderSimulator.sizeY = self.newY
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
                             for tempButton in self.buttons:
