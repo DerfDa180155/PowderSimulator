@@ -125,10 +125,6 @@ class main:
                             self.pouderSimulator.reset()
                         case "new board":
                             self.pouderSimulator.reset()
-                        case "new x":
-                            self.pouderSimulator.sizeX = self.newX
-                        case "new y":
-                            self.pouderSimulator.sizeY = self.newY
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
                             for tempButton in self.buttons:
@@ -144,6 +140,13 @@ class main:
                             for tempButton in self.buttons:
                                 tempButton.isSelected = False
                             button.isSelected = True
+
+                if button.isHovered:
+                    match button.onClick:
+                        case "new x":
+                            self.pouderSimulator.sizeX = self.newX
+                        case "new y":
+                            self.pouderSimulator.sizeY = self.newY
             #print(self.pouderSimulator.board)
 
             pygame.display.flip()
