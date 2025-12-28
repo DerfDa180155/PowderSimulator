@@ -43,20 +43,22 @@ class main:
             if button.onClick == "select1":
                 button.isSelected = True
 
-        self.newX = 0
-        self.newY = 0
-
         self.run()
 
     def run(self):
         oldMousePressed = pygame.mouse.get_pressed()
         while self.running:
+            scrolledUp = False
+            scrolledDown = False
             for event in pygame.event.get():
                 if event.type == pygame.QUIT: # Quit the Game
                     self.running = False
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE: # Quit the Game
                         self.running = False
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    scrolledUp = (event.button == 4)
+                    scrolledDown = (event.button == 5)
 
             self.windowWidth = self.screen.get_width()
             self.windowHeight = self.screen.get_height()
@@ -144,9 +146,19 @@ class main:
                 if button.isHovered:
                     match button.onClick:
                         case "new x":
-                            self.pouderSimulator.sizeX = self.newX
+                            if scrolledUp:
+                                self.pouderSimulator.sizeX += 1
+                            elif scrolledDown:
+                                self.pouderSimulator.sizeX -= 1
+                                if self.pouderSimulator.sizeX < 1:
+                                    self.pouderSimulator.sizeX = 1
                         case "new y":
-                            self.pouderSimulator.sizeY = self.newY
+                            if scrolledUp:
+                                self.pouderSimulator.sizeY += 1
+                            elif scrolledDown:
+                                self.pouderSimulator.sizeY -= 1
+                                if self.pouderSimulator.sizeY < 1:
+                                    self.pouderSimulator.sizeY = 1
             #print(self.pouderSimulator.board)
 
             pygame.display.flip()
