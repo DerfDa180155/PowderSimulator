@@ -43,6 +43,9 @@ class main:
             if button.onClick == "select1":
                 button.isSelected = True
 
+        self.newX = self.pouderSimulator.sizeX
+        self.newY = self.pouderSimulator.sizeY
+
         self.run()
 
     def run(self):
@@ -126,6 +129,8 @@ class main:
                         case "clear":
                             self.pouderSimulator.reset()
                         case "new board":
+                            self.pouderSimulator.sizeX = self.newX
+                            self.pouderSimulator.sizeY = self.newY
                             self.pouderSimulator.reset()
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
@@ -147,18 +152,18 @@ class main:
                     match button.onClick:
                         case "new x":
                             if scrolledUp:
-                                self.pouderSimulator.sizeX += 1
+                                self.newX += 1
                             elif scrolledDown:
-                                self.pouderSimulator.sizeX -= 1
-                                if self.pouderSimulator.sizeX < 1:
-                                    self.pouderSimulator.sizeX = 1
+                                self.newX -= 1
+                                if self.newX < 1:
+                                    self.newX = 1
                         case "new y":
                             if scrolledUp:
-                                self.pouderSimulator.sizeY += 1
+                                self.newY += 1
                             elif scrolledDown:
-                                self.pouderSimulator.sizeY -= 1
-                                if self.pouderSimulator.sizeY < 1:
-                                    self.pouderSimulator.sizeY = 1
+                                self.newY -= 1
+                                if self.newY < 1:
+                                    self.newY = 1
             #print(self.pouderSimulator.board)
 
             pygame.display.flip()
