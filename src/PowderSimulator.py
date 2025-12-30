@@ -15,7 +15,10 @@ class PowderSimulator:
 
         self.currentElement = "Sand"
 
-    def reset(self):
+    def reset(self, newSize=None):
+        if newSize is not None:
+            self.sizeX = newSize[0]
+            self.sizeY = newSize[1]
         self.board = self.generateEmpty()
 
     def placeElement(self, x, y):
