@@ -111,6 +111,21 @@ class main:
                 button.clicked(mx, my, mousePressedUp)
                 button.draw(self.windowWidth, self.windowHeight)
 
+                font = pygame.font.Font(pygame.font.get_default_font(), 20)
+
+                if button.onClick == "new x":
+                    text = font.render(str(self.newX), True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.centerx = button.x + button.width / 2
+                    newRect.y = button.y + button.height
+                    self.screen.blit(text, newRect)
+                elif button.onClick == "new y":
+                    text = font.render(str(self.newY), True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.centerx = button.x + button.width / 2
+                    newRect.y = button.y + button.height
+                    self.screen.blit(text, newRect)
+
                 if button.isleftClicked:
                     print(button.onClick)
                     match button.onClick:
