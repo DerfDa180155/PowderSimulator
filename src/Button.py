@@ -1,7 +1,7 @@
 import pygame
 
 class Button:
-    def __init__(self, screen, x, y, width, height, color, onClick, displayText="", textSize = 20):
+    def __init__(self, screen, x, y, width, height, color, onClick, displayText="", textSize = 20, textColor=(0, 0, 0)):
         self.screen = screen
         self.x = x
         self.y = y
@@ -11,6 +11,7 @@ class Button:
         self.onClick = onClick
         self.displayText = displayText
         self.textSize = textSize
+        self.textColor = textColor
 
         self.isSelected = False
 
@@ -30,7 +31,7 @@ class Button:
 
         if self.displayText != "":
             font = pygame.font.Font(pygame.font.get_default_font(), self.textSize)
-            text = font.render(self.displayText, True, (0, 0, 0))
+            text = font.render(self.displayText, True, self.textColor)
             newRect = text.get_rect()
             newRect.centerx = self.x + self.width / 2
             newRect.centery = self.y + self.height / 2
