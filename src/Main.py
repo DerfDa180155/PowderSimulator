@@ -80,6 +80,14 @@ class main:
 
             oldMousePressed = mousePressed
 
+            font = pygame.font.Font(pygame.font.get_default_font(), 50)
+
+            text = font.render("Powder Simulator", True, (255, 255, 255))
+            newRect = text.get_rect()
+            newRect.centerx = self.windowWidth / 2
+            newRect.y = 25
+            self.screen.blit(text, newRect)
+
 
             boardStartX = 100
             boardStartY = 100
