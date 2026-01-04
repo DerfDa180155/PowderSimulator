@@ -133,6 +133,12 @@ class main:
                     newRect.centerx = button.x + button.width / 2
                     newRect.y = button.y + button.height
                     self.screen.blit(text, newRect)
+                elif button.onClick == "speed":
+                    text = font.render(str(self.pouderSimulator.speed), True, (255, 255, 255))
+                    newRect = text.get_rect()
+                    newRect.centerx = button.x + button.width / 2
+                    newRect.y = button.y + button.height
+                    self.screen.blit(text, newRect)
 
                 if button.isleftClicked:
                     print(button.onClick)
