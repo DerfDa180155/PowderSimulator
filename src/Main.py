@@ -119,7 +119,7 @@ class main:
                 button.clicked(mx, my, mousePressedUp)
                 button.draw(self.windowWidth, self.windowHeight)
 
-                if button.onClick in ["new x", "new y", "speed"]:
+                if button.onClick in ["new x", "new y", "speed", "start simulation"]:
                     font = pygame.font.Font(pygame.font.get_default_font(), 20)
                     
                     if button.onClick == "new x":
@@ -128,6 +128,8 @@ class main:
                         text = font.render(str(self.newY), True, (255, 255, 255))
                     elif button.onClick == "speed":
                         text = font.render(str(self.pouderSimulator.speed), True, (255, 255, 255))
+                    elif button.onClick == "start simulation":
+                        text = font.render(str(self.pouderSimulator.running), True, (255, 255, 255))
 
                     newRect = text.get_rect()
                     newRect.centerx = button.x + button.width / 2
