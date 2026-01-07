@@ -187,6 +187,13 @@ class main:
                                 self.newY -= 1
                                 if self.newY < 1:
                                     self.newY = 1
+                        case "speed":
+                            if scrolledUp:
+                                self.pouderSimulator.speed += 1
+                            elif scrolledDown:
+                                self.pouderSimulator.speed -= 1
+                                if self.pouderSimulator.speed < 1:
+                                    self.pouderSimulator.speed = 1
             #print(self.pouderSimulator.board)
 
             pygame.display.flip()
