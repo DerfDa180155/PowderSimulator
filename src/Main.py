@@ -190,10 +190,12 @@ class main:
                         case "speed":
                             if scrolledUp:
                                 self.pouderSimulator.speed += 1
+                                self.pouderSimulator.speedCounter = 0
                             elif scrolledDown:
                                 self.pouderSimulator.speed -= 1
                                 if self.pouderSimulator.speed < 1:
                                     self.pouderSimulator.speed = 1
+                                self.pouderSimulator.speedCounter = 0
             #print(self.pouderSimulator.board)
 
             pygame.display.flip()
