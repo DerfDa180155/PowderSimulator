@@ -154,7 +154,8 @@ class main:
                         case "clear":
                             self.pouderSimulator.reset()
                         case "new board":
-                            self.pouderSimulator.reset((self.newX, self.newY))
+                            if self.newX != self.pouderSimulator.sizeX or self.newX != self.pouderSimulator.sizeY:
+                                self.pouderSimulator.reset((self.newX, self.newY))
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
                             for tempButton in self.buttons:
