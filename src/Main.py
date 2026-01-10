@@ -176,18 +176,18 @@ class main:
                     match button.onClick:
                         case "new x":
                             if scrolledUp:
-                                self.newX += 1
+                                self.newX += 5
                             elif scrolledDown:
-                                self.newX -= 1
-                                if self.newX < 1:
-                                    self.newX = 1
+                                self.newX -= 5
+                                if self.newX < 5:
+                                    self.newX = 5
                         case "new y":
                             if scrolledUp:
-                                self.newY += 1
+                                self.newY += 5
                             elif scrolledDown:
-                                self.newY -= 1
-                                if self.newY < 1:
-                                    self.newY = 1
+                                self.newY -= 5
+                                if self.newY < 5:
+                                    self.newY = 5
                         case "speed":
                             if scrolledUp:
                                 self.pouderSimulator.speed += 1
