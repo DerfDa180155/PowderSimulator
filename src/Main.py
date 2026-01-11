@@ -93,7 +93,7 @@ class main:
             boardStartY = 100
             boardWidth = 1300
             boardHeight = 1300
-            boardGapSize = 10
+            boardGapSize = 200/((self.pouderSimulator.sizeX+self.pouderSimulator.sizeY)/2)
 
             self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
             x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight)
@@ -154,7 +154,7 @@ class main:
                         case "clear":
                             self.pouderSimulator.reset()
                         case "new board":
-                            if self.newX != self.pouderSimulator.sizeX or self.newX != self.pouderSimulator.sizeY:
+                            if self.newX != self.pouderSimulator.sizeX or self.newY != self.pouderSimulator.sizeY:
                                 self.pouderSimulator.reset((self.newX, self.newY))
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
