@@ -93,9 +93,10 @@ class main:
             boardStartY = 100
             boardWidth = 1300
             boardHeight = 1300
-            boardGapSize = 200/((self.pouderSimulator.sizeX+self.pouderSimulator.sizeY)/2)
+            boardGapSizeX = 150/self.pouderSimulator.sizeX
+            boardGapSizeY = 150/self.pouderSimulator.sizeY
 
-            self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSize)
+            self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSizeX, boardGapSizeY)
             x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight)
             #print(str(x) + " " + str(y))
 
@@ -202,7 +203,7 @@ class main:
             pygame.display.flip()
             self.clock.tick(60)
 
-    def drawBoard(self, startX, startY, width, height, gapSize):
+    def drawBoard(self, startX, startY, width, height, gapSizeX, gapSizeY):
         color = (255, 255, 255)
 
         for x in range(self.pouderSimulator.sizeX):
@@ -211,7 +212,7 @@ class main:
                     color = self.pouderSimulator.board[y][x].color
                 else:
                     color = color = (255, 255, 255)
-                pygame.draw.rect(self.screen, color, (startX + ((width/self.pouderSimulator.sizeX)*x) + (gapSize/2), startY + ((height/self.pouderSimulator.sizeY)*y) + (gapSize/2), (width/self.pouderSimulator.sizeX)-(gapSize/2), (height/self.pouderSimulator.sizeY)-(gapSize/2)))
+                pygame.draw.rect(self.screen, color, (startX + ((width/self.pouderSimulator.sizeX)*x) + (gapSizeX/2), startY + ((height/self.pouderSimulator.sizeY)*y) + (gapSizeY/2), (width/self.pouderSimulator.sizeX)-(gapSizeX/2), (height/self.pouderSimulator.sizeY)-(gapSizeY/2)))
 
     def boardClicked(self, mx, my, startX, startY, width, height):
         endX = startX + width
