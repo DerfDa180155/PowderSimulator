@@ -159,18 +159,15 @@ class main:
                                 self.pouderSimulator.reset((self.newX, self.newY))
                         case "select1":
                             self.pouderSimulator.currentElement = "Sand"
-                            for tempButton in self.buttons:
-                                tempButton.isSelected = False
+                            self.resetButtonSelection()
                             button.isSelected = True
                         case "select2":
                             self.pouderSimulator.currentElement = "Water"
-                            for tempButton in self.buttons:
-                                tempButton.isSelected = False
+                            self.resetButtonSelection()
                             button.isSelected = True
                         case "select3":
                             self.pouderSimulator.currentElement = "Metal"
-                            for tempButton in self.buttons:
-                                tempButton.isSelected = False
+                            self.resetButtonSelection()
                             button.isSelected = True
 
                 if button.isHovered:
@@ -202,6 +199,10 @@ class main:
 
             pygame.display.flip()
             self.clock.tick(60)
+
+    def resetButtonSelection(self):
+        for tempButton in self.buttons:
+            tempButton.isSelected = False
 
     def drawBoard(self, startX, startY, width, height, gapSizeX, gapSizeY):
         color = (255, 255, 255)
