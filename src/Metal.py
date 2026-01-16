@@ -8,7 +8,7 @@ class Metal:
 
         self.color = self.colorArray[random.randint(0, len(self.colorArray) - 1)]
 
-        self.weight = 99
+        self.weight = 100
 
     def next(self, board, newBoard, x, y):
         newBoard[y][x] = board[y][x]
