@@ -93,8 +93,8 @@ class main:
             boardStartY = 100
             boardWidth = 1300
             boardHeight = 1300
-            boardGapSizeX = 150/self.pouderSimulator.sizeX
-            boardGapSizeY = 150/self.pouderSimulator.sizeY
+            boardGapSizeX = 100/self.pouderSimulator.sizeX
+            boardGapSizeY = 100/self.pouderSimulator.sizeY
 
             self.drawBoard(boardStartX, boardStartY, boardWidth, boardHeight, boardGapSizeX, boardGapSizeY)
             x, y = self.boardClicked(mx, my, boardStartX, boardStartY, boardWidth, boardHeight)
