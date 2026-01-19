@@ -146,12 +146,6 @@ class main:
                             self.pouderSimulator.running = False
                         case "step one":
                             self.pouderSimulator.generateNext()
-                        case "speed":
-                            if self.pouderSimulator.speed == 1:
-                                self.pouderSimulator.speed = 10
-                            else:
-                                self.pouderSimulator.speed = 1
-                            self.pouderSimulator.speedCounter = 0
                         case "clear":
                             self.pouderSimulator.reset()
                         case "new board":
