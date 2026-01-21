@@ -208,6 +208,14 @@ class main:
         for tempButton in self.buttons:
             tempButton.isSelected = False
 
+    def drawText(self, size, color, centerx, centery):
+        font = pygame.font.Font(pygame.font.get_default_font(), size)
+        text = font.render(str(self.pouderSimulator.sizeX), True, color)
+        newRect = text.get_rect()
+        newRect.centerx = centerx
+        newRect.centery = centery
+        self.screen.blit(text, newRect)
+
     def drawBoard(self, startX, startY, width, height, gapSizeX, gapSizeY):
         color = (255, 255, 255)
 
