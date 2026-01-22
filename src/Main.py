@@ -124,18 +124,10 @@ class main:
                     font = pygame.font.Font(pygame.font.get_default_font(), 20)
                     
                     if button.onClick == "new x":
-                        text = font.render(str(self.pouderSimulator.sizeX), True, (255, 255, 255))
-                        newRect = text.get_rect()
-                        newRect.centerx = button.x + button.width / 2
-                        newRect.y = button.y - button.height / 2
-                        self.screen.blit(text, newRect)
+                        self.drawText(str(self.pouderSimulator.sizeX), 20, (255, 255, 255), button.x + button.width / 2, button.y - button.height / 4)
                         text = font.render(str(self.newX), True, (255, 255, 255))
                     elif button.onClick == "new y":
-                        text = font.render(str(self.pouderSimulator.sizeY), True, (255, 255, 255))
-                        newRect = text.get_rect()
-                        newRect.centerx = button.x + button.width / 2
-                        newRect.y = button.y - button.height / 2
-                        self.screen.blit(text, newRect)
+                        self.drawText(str(self.pouderSimulator.sizeY), 20, (255, 255, 255), button.x + button.width / 2, button.y - button.height / 4)
                         text = font.render(str(self.newY), True, (255, 255, 255))
                     elif button.onClick == "speed":
                         text = font.render(str(self.pouderSimulator.speed), True, (255, 255, 255))
@@ -208,9 +200,9 @@ class main:
         for tempButton in self.buttons:
             tempButton.isSelected = False
 
-    def drawText(self, size, color, centerx, centery):
+    def drawText(self, text, size, color, centerx, centery):
         font = pygame.font.Font(pygame.font.get_default_font(), size)
-        text = font.render(str(self.pouderSimulator.sizeX), True, color)
+        text = font.render(text, True, color)
         newRect = text.get_rect()
         newRect.centerx = centerx
         newRect.centery = centery
