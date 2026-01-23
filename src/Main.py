@@ -121,23 +121,16 @@ class main:
                 button.draw(self.windowWidth, self.windowHeight)
 
                 if button.onClick in ["new x", "new y", "speed", "start simulation"]:
-                    font = pygame.font.Font(pygame.font.get_default_font(), 20)
-                    
                     if button.onClick == "new x":
                         self.drawText(str(self.pouderSimulator.sizeX), 20, (255, 255, 255), button.x + button.width / 2, button.y - button.height / 4)
-                        text = font.render(str(self.newX), True, (255, 255, 255))
+                        self.drawText(str(self.newX), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.25)
                     elif button.onClick == "new y":
                         self.drawText(str(self.pouderSimulator.sizeY), 20, (255, 255, 255), button.x + button.width / 2, button.y - button.height / 4)
-                        text = font.render(str(self.newY), True, (255, 255, 255))
+                        self.drawText(str(self.newY), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.25)
                     elif button.onClick == "speed":
-                        text = font.render(str(self.pouderSimulator.speed), True, (255, 255, 255))
+                        self.drawText(str(self.pouderSimulator.speed), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.25)
                     elif button.onClick == "start simulation":
-                        text = font.render(str(self.pouderSimulator.running), True, (255, 255, 255))
-
-                    newRect = text.get_rect()
-                    newRect.centerx = button.x + button.width / 2
-                    newRect.y = button.y + button.height
-                    self.screen.blit(text, newRect)
+                        self.drawText(str(self.pouderSimulator.running), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.25)
 
                 if button.isleftClicked:
                     print(button.onClick)
