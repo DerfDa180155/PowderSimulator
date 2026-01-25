@@ -116,14 +116,14 @@ class main:
                 if button.onClick in ["new x", "new y", "speed", "start simulation"]:
                     if button.onClick == "new x":
                         self.drawText(str(self.pouderSimulator.sizeX), 20, (255, 255, 255), button.x + button.width / 2, button.y - button.height / 4)
-                        self.drawText(str(self.newX), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.25)
+                        self.drawText(str(self.newX), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.23)
                     elif button.onClick == "new y":
                         self.drawText(str(self.pouderSimulator.sizeY), 20, (255, 255, 255), button.x + button.width / 2, button.y - button.height / 4)
-                        self.drawText(str(self.newY), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.25)
+                        self.drawText(str(self.newY), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.23)
                     elif button.onClick == "speed":
-                        self.drawText(str(self.pouderSimulator.speed), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.25)
+                        self.drawText(str(self.pouderSimulator.speed), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.23)
                     elif button.onClick == "start simulation":
-                        self.drawText(str(self.pouderSimulator.running), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.25)
+                        self.drawText(str(self.pouderSimulator.running), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.23)
 
                 if button.isleftClicked:
                     print(button.onClick)
