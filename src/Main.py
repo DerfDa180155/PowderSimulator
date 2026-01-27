@@ -39,6 +39,10 @@ class main:
         self.buttons.append(Button.Button(self.screen, 1000, 1430, 50, 50, (30,144,255), "select2", "Water"))
         self.buttons.append(Button.Button(self.screen, 1100, 1430, 50, 50, (128, 128, 128), "select3", "Metal"))
 
+
+        self.buttons.append(Button.Button(self.screen, 1280, 40, 50, 50, (255,255,0), "save", "Save"))
+        self.buttons.append(Button.Button(self.screen, 1340, 40, 50, 50, (255,255,0), "load", "Load"))
+
         for button in self.buttons:
             if button.onClick == "select1":
                 button.isSelected = True
