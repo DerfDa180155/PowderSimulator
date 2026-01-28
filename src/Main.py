@@ -155,6 +155,10 @@ class main:
                             self.pouderSimulator.currentElement = "Metal"
                             self.resetButtonSelection()
                             button.isSelected = True
+                        case "save":
+                            pass
+                        case "load":
+                            pass
 
                 if button.isHovered:
                     match button.onClick:
