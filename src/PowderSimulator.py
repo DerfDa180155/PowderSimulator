@@ -57,8 +57,8 @@ class PowderSimulator:
         self.board = newBoard
 
     def save(self):
-        pass
+        self.board = self.generateEmpty()
 
     def load(self):
-        pass
+        self.board = self.generateEmpty()
             
