@@ -2,6 +2,7 @@ import Empty
 import Sand
 import Water
 import Metal
+import xml.etree.cElementTree as ET
 
 class PowderSimulator:
     def __init__(self, sizeX, sizeY):
@@ -57,7 +58,19 @@ class PowderSimulator:
         self.board = newBoard
 
     def save(self):
-        self.board = self.generateEmpty()
+        path = "savedBoard/"
+
+        root = ET.Element("powderSimulator")
+
+        ET.SubElement(root, "sizeX").text = str(self.sizeX)
+        ET.SubElement(root, "sizeY").text = str(self.sizeY)
+        board = ET.SubElement(root, "board", type="array")
+        for i in self.board:
+            x = ET.SubElement(board, "x")
+            for j in i:
+                y = ET.SubElement(x, "y").text = j.__class__
+
+        ET.ElementTree(root).write(path + "board.xml")
 
     def load(self):
         self.board = self.generateEmpty()
