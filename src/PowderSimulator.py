@@ -68,7 +68,7 @@ class PowderSimulator:
         for i in self.board:
             x = ET.SubElement(board, "x")
             for j in i:
-                y = ET.SubElement(x, "y").text = j.__class__
+                y = ET.SubElement(x, "y").text = str(j.__class__)
 
         ET.ElementTree(root).write(path + "board.xml")
 
