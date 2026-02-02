@@ -15,6 +15,7 @@ class PowderSimulator:
         self.speedCounter = 0
 
         self.currentElement = "Sand"
+        self.path = "savedBoard/"
 
     def reset(self, newSize=None):
         if newSize is not None:
@@ -58,7 +59,7 @@ class PowderSimulator:
         self.board = newBoard
 
     def save(self):
-        path = "savedBoard/"
+
 
         root = ET.Element("powderSimulator")
 
@@ -70,8 +71,10 @@ class PowderSimulator:
             for j in i:
                 y = ET.SubElement(x, "y").text = str(j.__class__)
 
-        ET.ElementTree(root).write(path + "board.xml")
+        ET.ElementTree(root).write(self.path + "board.xml")
 
     def load(self):
+        root = ET.parse(self.path + "board.xml").getroot()
+        self.sizeX = int(root[0].text)
+        self.sizeY = int(root[1].text)
         self.board = self.generateEmpty()
-            
