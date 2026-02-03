@@ -78,3 +78,15 @@ class PowderSimulator:
         self.sizeX = int(root[0].text)
         self.sizeY = int(root[1].text)
         self.board = self.generateEmpty()
+
+        for i in range(0, self.sizeX):
+            for j in range(0, self.sizeY):
+                match root[2][i][j].text:
+                    case "<class 'Sand.Sand'>":
+                        self.board[i][j] = Sand.Sand()
+                    case "<class 'Water.Water'>":
+                        self.board[i][j] = Water.Water()
+                    case "<class 'Metal.Metal'>":
+                        self.board[i][j] = Metal.Metal()
+                    case "<class 'Empty.Empty'>":
+                        pass
