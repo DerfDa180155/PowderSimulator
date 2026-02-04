@@ -58,9 +58,7 @@ class PowderSimulator:
 
         self.board = newBoard
 
-    def save(self):
-
-
+    def save(self, name = "board"):
         root = ET.Element("powderSimulator")
 
         ET.SubElement(root, "sizeX").text = str(self.sizeX)
@@ -71,10 +69,10 @@ class PowderSimulator:
             for j in i:
                 y = ET.SubElement(x, "y").text = str(j.__class__)
 
-        ET.ElementTree(root).write(self.path + "board.xml")
+        ET.ElementTree(root).write(self.path + name + ".xml")
 
-    def load(self):
-        root = ET.parse(self.path + "board.xml").getroot()
+    def load(self, name = "board"):
+        root = ET.parse(self.path + name + ".xml").getroot()
         self.sizeX = int(root[0].text)
         self.sizeY = int(root[1].text)
         self.board = self.generateEmpty()
