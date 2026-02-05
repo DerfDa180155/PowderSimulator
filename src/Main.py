@@ -156,9 +156,9 @@ class main:
                             self.resetButtonSelection()
                             button.isSelected = True
                         case "save":
-                            self.pouderSimulator.save()
+                            self.pouderSimulator.save("board")
                         case "load":
-                            self.pouderSimulator.load()
+                            self.pouderSimulator.load("board")
 
                 if button.isHovered:
                     match button.onClick:
