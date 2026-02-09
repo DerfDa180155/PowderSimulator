@@ -2,6 +2,7 @@ import Empty
 import Sand
 import Water
 import Metal
+import Stone
 import xml.etree.cElementTree as ET
 
 class PowderSimulator:
@@ -33,6 +34,8 @@ class PowderSimulator:
                 self.board[y-1][x-1] = Water.Water()
             case "Metal":
                 self.board[y-1][x-1] = Metal.Metal()
+            case "Stone":
+                self.board[y-1][x-1] = Stone.Stone()
 
     def removeElement(self, x, y):
         self.board[y-1][x-1] = Empty.Empty()
