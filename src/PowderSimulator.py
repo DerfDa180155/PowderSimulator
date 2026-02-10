@@ -89,5 +89,7 @@ class PowderSimulator:
                         self.board[i][j] = Water.Water()
                     case "<class 'Metal.Metal'>":
                         self.board[i][j] = Metal.Metal()
+                    case "<class 'Stone.Stone'>":
+                        self.board[i][j] = Stone.Stone()
                     case "<class 'Empty.Empty'>":
                         pass
