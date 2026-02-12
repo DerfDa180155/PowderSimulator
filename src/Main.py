@@ -140,6 +140,8 @@ class main:
                             self.pouderSimulator.running = False
                         case "step one":
                             self.pouderSimulator.generateNext()
+                        case "border":
+                            self.pouderSimulator.border = not self.pouderSimulator.border
                         case "clear":
                             self.pouderSimulator.reset()
                         case "new board":
