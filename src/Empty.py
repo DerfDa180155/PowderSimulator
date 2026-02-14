@@ -7,5 +7,5 @@ class Empty:
         self.color = (64,64,64)
         self.weight = -1
 
-    def next(self, board, newBoard, x, y):
+    def next(self, board, newBoard, x, y, border):
         pass

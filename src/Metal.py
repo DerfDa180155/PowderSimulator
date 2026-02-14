@@ -10,5 +10,5 @@ class Metal:
 
         self.weight = 100
 
-    def next(self, board, newBoard, x, y):
+    def next(self, board, newBoard, x, y, border):
         newBoard[y][x] = board[y][x]

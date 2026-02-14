@@ -10,7 +10,7 @@ class Water:
 
         self.weight = 1
 
-    def next(self, board, newBoard, x, y):
+    def next(self, board, newBoard, x, y, border):
         if y > len(board) or y < 0 or x > len(board[y]) or x < 0:
             return
 

@@ -59,7 +59,7 @@ class PowderSimulator:
         for y in range(len(self.board)-1,-1,-1):
             for x in range(len(self.board[y])-1,-1,-1):
                 if self.board[y][x].__class__ != Empty.Empty:
-                    self.board[y][x].next(self.board, newBoard, x, y)
+                    self.board[y][x].next(self.board, newBoard, x, y, self.border)
 
         self.board = newBoard
 
