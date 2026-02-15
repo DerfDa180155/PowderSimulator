@@ -37,6 +37,18 @@ class Sand:
                 newBoard[y][x] = temp
                 moved = True
 
+            if border:
+                if x-1 < 0:
+                    if board[y+1][len(board[0])-1].__class__ == Empty.Empty and newBoard[y+1][len(newBoard[0])-1].__class__ == Empty.Empty and not moved:
+                        newBoard[y+1][len(board[0])-1] = board[y][x]
+                        moved = True
+
+                    if board[y+1][len(board[0])-1].weight < self.weight and newBoard[y+1][len(newBoard[0])-1].weight < self.weight and not moved:
+                        temp = newBoard[y+1][len(board[0])-1]
+                        newBoard[y+1][len(board[0])-1] = board[y][x]
+                        newBoard[y][x] = temp
+                        moved = True
+
             if x+1 < len(board[y]) and not moved:
                 if board[y+1][x+1].__class__ == Empty.Empty and newBoard[y+1][x+1].__class__ == Empty.Empty:
                     newBoard[y+1][x+1] = board[y][x]
