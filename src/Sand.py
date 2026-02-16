@@ -59,6 +59,16 @@ class Sand:
                     newBoard[y+1][x+1] = board[y][x]
                     newBoard[y][x] = temp
                     moved = True
+            elif border:
+                if board[y+1][0].__class__ == Empty.Empty and newBoard[y+1][0].__class__ == Empty.Empty and not moved:
+                    newBoard[y+1][0] = board[y][x]
+                    moved = True
+
+                if board[y+1][0].weight < self.weight and newBoard[y+1][0].weight < self.weight and not moved:
+                    temp = newBoard[y+1][0]
+                    newBoard[y+1][0] = board[y][x]
+                    newBoard[y][x] = temp
+                    moved = True
 
         if not moved:
             newBoard[y][x] = board[y][x]
