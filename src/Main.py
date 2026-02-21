@@ -196,6 +196,13 @@ class main:
                                 if self.pouderSimulator.speed < 1:
                                     self.pouderSimulator.speed = 1
                                 self.pouderSimulator.speedCounter = 0
+                        case "placeSize":
+                            if scrolledUp:
+                                self.pouderSimulator.placeSize += 1
+                            elif scrolledDown:
+                                self.pouderSimulator.placeSize -= 1
+                                if self.pouderSimulator.placeSize < 1:
+                                    self.pouderSimulator.placeSize = 1
             #print(self.pouderSimulator.board)
 
             pygame.display.flip()

@@ -15,6 +15,7 @@ class PowderSimulator:
         self.speed = 10
         self.speedCounter = 0
 
+        self.placeSize = 1
         self.border = True
 
         self.currentElement = "Sand"
