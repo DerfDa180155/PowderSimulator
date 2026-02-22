@@ -101,7 +101,7 @@ class main:
             #print(str(x) + " " + str(y))
 
             if mouseHolding[0] and x > 0 and y > 0: # left click
-                self.pouderSimulator.placeElement(x, y)
+                self.pouderSimulator.placeElements(x, y)
             elif mouseHolding[2] and x > 0 and y > 0: # right click
                 self.pouderSimulator.removeElement(x, y)
 

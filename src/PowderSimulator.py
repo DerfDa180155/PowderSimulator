@@ -27,6 +27,9 @@ class PowderSimulator:
             self.sizeY = newSize[1]
         self.board = self.generateEmpty()
 
+    def placeElements(self, x, y):
+        self.placeElement(x, y)
+
     def placeElement(self, x, y):
         if self.board[y-1][x-1].__class__ != Empty.Empty:
             return
