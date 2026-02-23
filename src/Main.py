@@ -36,7 +36,7 @@ class main:
         self.buttons.append(Button.Button(self.screen, 700, 1430, 50, 50, (255,255,0), "new board", "New Board"))
         self.buttons.append(Button.Button(self.screen, 800, 1430, 50, 50, (255,255,0), "new x", "X"))
         self.buttons.append(Button.Button(self.screen, 900, 1430, 50, 50, (255,255,0), "new y", "Y"))
-        self.buttons.append(Button.Button(self.screen, 1000, 1430, 50, 50, (255,255,0), "placeSize", "Place Size"))
+        self.buttons.append(Button.Button(self.screen, 1000, 1430, 50, 50, (255,255,0), "place size", "Place Size"))
         self.buttons.append(Button.Button(self.screen, 1100, 1430, 50, 50, (255,238,140), "select1", "Sand"))
         self.buttons.append(Button.Button(self.screen, 1200, 1430, 50, 50, (30,144,255), "select2", "Water"))
         self.buttons.append(Button.Button(self.screen, 1300, 1430, 50, 50, (128, 128, 128), "select3", "Metal"))
@@ -120,7 +120,7 @@ class main:
                 button.clicked(mx, my, mousePressedUp)
                 button.draw(self.windowWidth, self.windowHeight)
 
-                if button.onClick in ["new x", "new y", "speed", "border", "start simulation"]:
+                if button.onClick in ["new x", "new y", "speed", "border", "start simulation", "place size"]:
                     if button.onClick == "new x":
                         self.drawText(str(self.pouderSimulator.sizeX), 20, (255, 255, 255), button.x + button.width / 2, button.y - button.height / 4)
                         self.drawText(str(self.newX), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.23)
@@ -133,6 +133,8 @@ class main:
                         self.drawText(str(self.pouderSimulator.border), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.23)
                     elif button.onClick == "start simulation":
                         self.drawText(str(self.pouderSimulator.running), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.23)
+                    elif button.onClick == "place size":
+                        self.drawText(str(self.pouderSimulator.placeSize), 20, (255, 255, 255), button.x + button.width / 2, button.y + button.height * 1.23)
 
                 if button.isleftClicked:
                     print(button.onClick)
@@ -196,7 +198,7 @@ class main:
                                 if self.pouderSimulator.speed < 1:
                                     self.pouderSimulator.speed = 1
                                 self.pouderSimulator.speedCounter = 0
-                        case "placeSize":
+                        case "place size":
                             if scrolledUp:
                                 self.pouderSimulator.placeSize += 1
                             elif scrolledDown:
