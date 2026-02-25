@@ -32,10 +32,12 @@ class PowderSimulator:
             self.placeElement(x, y)
         else:
             for i in range(self.placeSize):
-                pass
+                for j in range(self.placeSize):
+                    self.placeElement(x+i,y+j)
+
 
     def placeElement(self, x, y):
-        if x < 0 or x > len(self.board[0]) - 1 or y < 0 or y > len(self.board) - 1 or self.board[y-1][x-1].__class__ != Empty.Empty:
+        if x < 0 or x > len(self.board[0]) or y < 0 or y > len(self.board) or self.board[y-1][x-1].__class__ != Empty.Empty:
             return
 
         match self.currentElement:
