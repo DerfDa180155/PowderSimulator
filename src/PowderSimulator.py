@@ -33,7 +33,7 @@ class PowderSimulator:
         else:
             for i in range(self.placeSize):
                 for j in range(self.placeSize):
-                    self.placeElement(x+i,y+j)
+                    self.placeElement(x+i-int(self.placeSize/2),y+j-int(self.placeSize/2))
 
 
     def placeElement(self, x, y):
