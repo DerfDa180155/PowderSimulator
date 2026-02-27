@@ -103,7 +103,7 @@ class main:
             if mouseHolding[0] and x > 0 and y > 0: # left click
                 self.pouderSimulator.placeElements(x, y)
             elif mouseHolding[2] and x > 0 and y > 0: # right click
-                self.pouderSimulator.removeElement(x, y)
+                self.pouderSimulator.removeElements(x, y)
 
 
             # auto generate

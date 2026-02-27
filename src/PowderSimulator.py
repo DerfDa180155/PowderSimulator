@@ -50,7 +50,18 @@ class PowderSimulator:
             case "Stone":
                 self.board[y-1][x-1] = Stone.Stone()
 
+    def removeElements(self, x, y):
+        if self.placeSize == 1:
+            self.removeElement(x, y)
+        else:
+            for i in range(self.placeSize):
+                for j in range(self.placeSize):
+                    self.removeElement(x+i-int(self.placeSize/2),y+j-int(self.placeSize/2))
+
     def removeElement(self, x, y):
+        if x < 0 or x > len(self.board[0]) or y < 0 or y > len(self.board) or self.board[y-1][x-1].__class__ == Empty.Empty:
+            return
+
         self.board[y-1][x-1] = Empty.Empty()
 
     def generateEmpty(self):
