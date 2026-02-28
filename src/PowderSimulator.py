@@ -37,7 +37,7 @@ class PowderSimulator:
 
 
     def placeElement(self, x, y):
-        if x < 0 or x > len(self.board[0]) or y < 0 or y > len(self.board) or self.board[y-1][x-1].__class__ != Empty.Empty:
+        if x < 1 or x > len(self.board[0]) or y < 1 or y > len(self.board) or self.board[y-1][x-1].__class__ != Empty.Empty:
             return
 
         match self.currentElement:
@@ -59,7 +59,7 @@ class PowderSimulator:
                     self.removeElement(x+i-int(self.placeSize/2),y+j-int(self.placeSize/2))
 
     def removeElement(self, x, y):
-        if x < 0 or x > len(self.board[0]) or y < 0 or y > len(self.board) or self.board[y-1][x-1].__class__ == Empty.Empty:
+        if x < 1 or x > len(self.board[0]) or y < 1 or y > len(self.board) or self.board[y-1][x-1].__class__ == Empty.Empty:
             return
 
         self.board[y-1][x-1] = Empty.Empty()
