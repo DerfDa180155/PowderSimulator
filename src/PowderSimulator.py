@@ -31,9 +31,10 @@ class PowderSimulator:
         if self.placeSize == 1:
             self.placeElement(x, y)
         else:
-            for i in range(self.placeSize):
-                for j in range(self.placeSize):
-                    self.placeElement(x+i-int((self.placeSize-1)/2),y+j-int((self.placeSize-1)/2))
+            for i in range(len(self.board)):
+                for j in range(len(self.board[0])):
+                    if (j - x) ** 2 + (i - y) ** 2 <= self.placeSize ** 2:
+                        self.placeElement(j, i)
 
     def placeElement(self, x, y):
         if x < 1 or x > len(self.board[0]) or y < 1 or y > len(self.board) or self.board[y-1][x-1].__class__ != Empty.Empty:
@@ -53,9 +54,10 @@ class PowderSimulator:
         if self.placeSize == 1:
             self.removeElement(x, y)
         else:
-            for i in range(self.placeSize):
-                for j in range(self.placeSize):
-                    self.removeElement(x+i-int((self.placeSize-1)/2),y+j-int((self.placeSize-1)/2))
+            for i in range(len(self.board)):
+                for j in range(len(self.board[0])):
+                    if (j - x) ** 2 + (i - y) ** 2 <= self.placeSize ** 2:
+                        self.removeElement(j, i)
 
     def removeElement(self, x, y):
         if x < 1 or x > len(self.board[0]) or y < 1 or y > len(self.board) or self.board[y-1][x-1].__class__ == Empty.Empty:
