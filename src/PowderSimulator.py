@@ -31,8 +31,8 @@ class PowderSimulator:
         if self.placeSize == 1:
             self.placeElement(x, y)
         else:
-            for i in range(len(self.board)):
-                for j in range(len(self.board[0])):
+            for i in range(len(self.board)+1):
+                for j in range(len(self.board[0])+1):
                     if (j - x) ** 2 + (i - y) ** 2 <= self.placeSize ** 2:
                         self.placeElement(j, i)
 
