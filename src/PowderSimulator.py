@@ -3,6 +3,7 @@ import Sand
 import Water
 import Metal
 import Stone
+import Lava
 import xml.etree.cElementTree as ET
 
 class PowderSimulator:
@@ -49,6 +50,8 @@ class PowderSimulator:
                 self.board[y-1][x-1] = Metal.Metal()
             case "Stone":
                 self.board[y-1][x-1] = Stone.Stone()
+            case "Lava":
+                self.board[y-1][x-1] = Lava.Lava()
 
     def removeElements(self, x, y):
         if self.placeSize == 1:
@@ -116,5 +119,7 @@ class PowderSimulator:
                         self.board[i][j] = Metal.Metal()
                     case "<class 'Stone.Stone'>":
                         self.board[i][j] = Stone.Stone()
+                    case "<class 'Lava.Lava'>":
+                        self.board[i][j] = Lava.Lava()
                     case "<class 'Empty.Empty'>":
                         pass
