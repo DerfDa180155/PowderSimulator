@@ -11,4 +11,4 @@ class Lava:
         self.weight = 1
 
     def next(self, board, newBoard, x, y, border):
-        board[y][x] = Empty.Empty()
+        newBoard[y][x] = board[y][x]

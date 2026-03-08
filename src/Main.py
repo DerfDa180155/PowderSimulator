@@ -41,6 +41,7 @@ class main:
         self.buttons.append(Button.Button(self.screen, 1200, 1430, 50, 50, (30,144,255), "select2", "Water"))
         self.buttons.append(Button.Button(self.screen, 1300, 1430, 50, 50, (128, 128, 128), "select3", "Metal"))
         self.buttons.append(Button.Button(self.screen, 1400, 1430, 50, 50, (112,128,144), "select4", "Stone"))
+        self.buttons.append(Button.Button(self.screen, 1450, 1430, 50, 50, (112,128,144), "select5", "Lava"))
 
 
         self.buttons.append(Button.Button(self.screen, 1280, 40, 50, 50, (255,255,0), "save", "Save"))
@@ -166,6 +167,10 @@ class main:
                             button.isSelected = True
                         case "select4":
                             self.pouderSimulator.currentElement = "Stone"
+                            self.resetButtonSelection()
+                            button.isSelected = True
+                        case "select5":
+                            self.pouderSimulator.currentElement = "Lava"
                             self.resetButtonSelection()
                             button.isSelected = True
                         case "save":
