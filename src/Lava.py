@@ -4,7 +4,7 @@ import Empty
 
 class Lava:
     def __init__(self):
-        self.colorArray = [(255,144,0)]
+        self.colorArray = [(255,144,0), (255,60,0), (255,180,0), (255,150,0), (255,80,0)]
 
         self.color = self.colorArray[random.randint(0, len(self.colorArray)-1)]
 
