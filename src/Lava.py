@@ -90,10 +90,13 @@ class Lava:
                         newBoard[y][x] = temp
                         moved = True
 
-        if board[y][x - 1].__class__ == Empty.Empty and newBoard[y][
-            x - 1].__class__ == Empty.Empty and x - 1 > 0 and not moved:
+        if board[y][x - 1].__class__ == Empty.Empty and newBoard[y][x - 1].__class__ == Empty.Empty and x - 1 > 0 and not moved:
             newBoard[y][x - 1] = board[y][x]
             moved = True
+
+        if newBoard[y][x - 1].__class__ == Water.Water:
+            newBoard[y][x - 1] = Stone.Stone()
+            return
 
         if board[y][x - 1].weight < self.weight and newBoard[y][x - 1].weight < self.weight and x - 1 > 0 and not moved:
             temp = newBoard[y][x - 1]
@@ -105,6 +108,10 @@ class Lava:
             if board[y][x + 1].__class__ == Empty.Empty and newBoard[y][x + 1].__class__ == Empty.Empty:
                 newBoard[y][x + 1] = board[y][x]
                 moved = True
+
+            if newBoard[y][x + 1].__class__ == Water.Water:
+                newBoard[y][x + 1] = Stone.Stone()
+                return
 
             if board[y][x + 1].weight < self.weight and newBoard[y][x + 1].weight < self.weight and not moved:
                 temp = newBoard[y][x + 1]
