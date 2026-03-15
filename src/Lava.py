@@ -94,7 +94,8 @@ class Lava:
             newBoard[y][x - 1] = board[y][x]
             moved = True
 
-        if newBoard[y][x - 1].__class__ == Water.Water:
+        if board[y][x - 1].__class__ == Water.Water:
+            board[y][x - 1] = Empty.Empty()
             newBoard[y][x - 1] = Stone.Stone()
             return
 
