@@ -1,6 +1,8 @@
 import random
 import pygame
 import Empty
+import Lava
+import Stone
 
 class Water:
     def __init__(self):
@@ -21,6 +23,10 @@ class Water:
                 newBoard[y+1][x] = board[y][x]
                 moved = True
 
+            if newBoard[y+1][x].__class__ == Lava.Lava:
+                newBoard[y+1][x] = Stone.Stone()
+                return
+
             if board[y+1][x].weight < self.weight and newBoard[y+1][x].weight < self.weight and not moved:
                 temp = newBoard[y+1][x]
                 newBoard[y+1][x] = board[y][x]
@@ -30,6 +36,10 @@ class Water:
             if board[y+1][x-1].__class__ == Empty.Empty and newBoard[y+1][x-1].__class__ == Empty.Empty and x-1 >= 0 and not moved:
                 newBoard[y+1][x-1] = board[y][x]
                 moved = True
+
+            if newBoard[y+1][x-1].__class__ == Lava.Lava:
+                newBoard[y+1][x-1] = Stone.Stone()
+                return
 
             if board[y+1][x-1].weight < self.weight and newBoard[y+1][x-1].weight < self.weight and x-1 >= 0 and not moved:
                 temp = newBoard[y+1][x-1]
@@ -42,6 +52,10 @@ class Water:
                 if board[y+1][x+1].__class__ == Empty.Empty and newBoard[y+1][x+1].__class__ == Empty.Empty:
                     newBoard[y+1][x+1] = board[y][x]
                     moved = True
+
+                if newBoard[y+1][x+1].__class__ == Lava.Lava:
+                    newBoard[y+1][x+1] = Stone.Stone()
+                    return
 
                 if board[y+1][x+1].weight < self.weight and newBoard[y+1][x+1].weight < self.weight and not moved:
                     temp = newBoard[y+1][x+1]
