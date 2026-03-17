@@ -18,7 +18,7 @@ class main:
         self.windowWidth = 1500
         self.windowHeight = 1500
 
-        self.screen = pygame.display.set_mode((self.windowWidth, self.windowHeight), pygame.RESIZABLE | pygame.GL_DOUBLEBUFFER)
+        self.screen = pygame.display.set_mode((self.windowWidth, self.windowHeight), pygame.GL_DOUBLEBUFFER)
         pygame.display.set_caption("Powder Simulator by David Derflinger")
 
         self.clock = pygame.time.Clock()
